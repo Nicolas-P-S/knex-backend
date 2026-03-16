@@ -1,14 +1,14 @@
 import {prisma} from "../../../database/prisma";
 import bcrypt from "bcrypt";
 
-interface criarUsuario{
+interface CriarUsuario{
     nome: string;
     email: string;
     senha: string;
 }
 
 export class CriarUsuarioService {
-    async execute({nome, email, senha}: criarUsuario){
+    async execute({nome, email, senha}: CriarUsuario){
         const usuarioExiste = await prisma.user.findUnique({
             where: {email}
         });
@@ -26,6 +26,7 @@ export class CriarUsuarioService {
                 password: senhaHash
             }
         });
-        return usuario;
+        const {password, ...usuarioSemSenha} = usuario
+        return usuarioSemSenha;
     }
 }
