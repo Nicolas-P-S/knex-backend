@@ -84,6 +84,7 @@ docker run -d
 -p 5433:5432 
 -e POSTGRES_PASSWORD=postgres 
 -e POSTGRES_DB=knex-case 
+--name knex-case
 postgres
 
 Depois execute as migrations:
