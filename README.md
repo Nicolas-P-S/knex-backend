@@ -181,7 +181,15 @@ curl http://localhost:3000/products
 
 ## Atualizar produto
 
-PUT /products/:id
+PUT /products/
+
+curl -X PUT http://localhost:3000/products/ID \
+  -H "Authorization: Bearer SEU_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "iPhone 16",
+    "price": 10999
+  }'
 
 ---
 
@@ -189,13 +197,16 @@ PUT /products/:id
 
 DELETE /products/:id
 
+curl -X DELETE http://localhost:3000/products/ID \
+  -H "Authorization: Bearer SEU_TOKEN"
+
 ---
 
 ## Criar transação (compra)
 
 POST /transactions
 
-curl -X POST http://localhost:3000/transactions 
+curl -X POST http://localhost:3000/
 -H "Authorization: Bearer TOKEN" 
 -H "Content-Type: application/json" 
 -d '{"productId":"ID_DO_PRODUTO"}'
