@@ -50,7 +50,7 @@ server.ts
 
 Clone o repositório:
 
-git clone https://github.com/SEU_USUARIO/knex-backend.git
+git clone https://github.com/Nicolas-P-S/knex-backend.git
 
 Entre na pasta do projeto:
 
